@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>How many days left to..</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body onload="updateDate()">
+    <div class="main">
+      <h2>Change the date and press enter:</h2>
+      <input type="number" id="year" onchange="updateDate()" min="1" max ="12" value="2077" placeholder="year">
+      <input type="number" id="month" onchange="updateDate()" value="12" min="1" max ="12" placeholder="month">
+      <input type="number" id="day" onchange="updateDate()" value="12" min="1" max ="31" placeholder="day">
+      <input type="number" id="hour" onchange="updateDate()" value="12" min="0" max ="24" placeholder="hour">
+      <input type="number" id="minute" onchange="updateDate()" value="12" min="0" max ="60" placeholder="minute">
+      <input type="number" id="second" onchange="updateDate()" value="12" min="0" max ="60" placeholder="second">
+      <p id="CounterScore">-- -- --</p>
+    </div>
+  </body>
+  <script src="counter.js"></script>
+</html>

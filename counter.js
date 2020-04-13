@@ -1,18 +1,22 @@
-var date = document.getElementById('date').value;
   var counter = document.getElementById('CounterScore');
-  var reset = document.getElementById('reset');
-  var startDate = new Date('date').getTime();
+  let end;
 
-  reset.onclick = function(){
-    startDate = new Date().getTime();
-  };
+function updateDate(){
+  let year = document.getElementById('year').value;
+  let month = document.getElementById('month').value;
+  let day = document.getElementById('day').value;
+  let hour = document.getElementById('hour').value;
+  let minute = document.getElementById('minute').value;
+  let second = document.getElementById('second').value;
 
-  var timer = setInterval(function(){
-    //actual date
+  end = new Date(year, month, day, hour, minute, second);
+}
+
+var timer = setInterval(function(){
+
     var actualDate = new Date().getTime();
 
-    //calculating distance
-    var distance = actualDate - startDate;
+    var distance = end - actualDate ;
 
     //changing distance into days, hours etc...
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -26,4 +30,3 @@ var date = document.getElementById('date').value;
     counter.innerHTML = days+ " days <br>"+ hours+ " hours <br>"+ minutes+ " minutes <br>"+ seconds+ " seconds <br>";
 
   }, 1000);
-}
